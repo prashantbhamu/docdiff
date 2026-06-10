@@ -1,0 +1,14 @@
+.venv/
+.smoke/
+build/
+dist/
+reports/
+__pycache__/
+*.py[cod]
+*.exe
+*.html
+*.pdf
+*.docx
+.pytest_cache/
+.DS_Store
+Thumbs.db
