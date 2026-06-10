@@ -11,15 +11,15 @@ The executable is self-contained. A target Windows PC does not need Python or th
 ## Run from source
 
 1. Install Python 3.11 or newer.
-2. Run `setup_dev.bat`.
-3. Run `run_compare.bat`.
+2. Create a virtual environment and install `requirements.txt`.
+3. Run `python src\docdiff_app.py`.
 
-The launcher uses `dist\DocDiff.exe` when present. Otherwise, it runs the application from `.venv`.
+The application opens in the browser at `http://127.0.0.1:8765`.
 
 ## Command-line comparison
 
 ```powershell
-.venv\Scripts\python.exe src\compare_docs.py original.pdf revised.pdf --output report.html
+python src\compare_docs.py original.pdf revised.pdf --output report.html
 ```
 
 ## Build
@@ -28,7 +28,7 @@ The launcher uses `dist\DocDiff.exe` when present. Otherwise, it runs the applic
 build_exe.bat
 ```
 
-PyInstaller creates the untracked binary at `dist\DocDiff.exe`. Executables, uploaded documents, generated reports, and build directories are intentionally excluded from Git.
+The build script creates its own virtual environment, installs the required packages, and runs PyInstaller. It creates the untracked binary at `dist\DocDiff.exe`. Executables, uploaded documents, generated reports, and build directories are intentionally excluded from Git.
 
 ## Privacy
 
